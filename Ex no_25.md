@@ -1,52 +1,44 @@
 # EX 25 C program to check whether a given character is a vowel or consonant using pointer
-
+## DATE: 
 ## AIM:
 To write a C program to check whether a given character is a vowel or consonant using pointer
 
-## Algorithm
-1.Start the program and declare a character variable and a pointer.
-
-2.Read a character from the user.
-
-3.Use the pointer to access the character and check if it is a vowel (a, e, i, o, u).
-
-4.If the character is a vowel, display "Vowel", otherwise, display "Consonant".
-
-5.End the program. 
+## Algorithm:
+1. Start.
+2. Declare a variable value of type char.
+3. Prompt the user to enter a value.
+4. Read the value using scanf.
+5. Find vowel and consonants
+6. End.
 
 ## Program:
-```
+```c program
 #include <stdio.h>
-
-int main()
-{
-    char ch;
-    char *ptr = &ch;
-
-    printf("Enter a character: ");
-    scanf("%c", ptr);  // Read the character using the pointer
-
-    // Check if the character is a vowel or consonant
-    if(*ptr == 'a' || *ptr == 'e' || *ptr == 'i' || *ptr == 'o' || *ptr == 'u' || 
-       *ptr == 'A' || *ptr == 'E' || *ptr == 'I' || *ptr == 'O' || *ptr == 'U')
-    {
-        printf("Vowel\n");
-    }
-    else
-    {
-        printf("Consonant\n");
-    }
-
-    return 0;
+int main() {
+ char str[100];
+ char *p;
+ int vowels = 0, consonants = 0;
+ scanf(" %[^\n]", str); 
+ p = str; 
+ while (*p != '\0') {
+ if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) {
+ char ch = (*p >= 'A' && *p <= 'Z') ? *p + 32 : *p;
+ if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+ vowels++;
+ } else {
+ consonants++;
+ }
+ }
+ p++;
+ }
+ printf("Vowels: %d\n", vowels);
+ printf("Consonants: %d\n", consonants);
+ return 0;
 }
-
-
 ```
 
 ## Output:
-
-![image](https://github.com/user-attachments/assets/39a04d48-270f-45c5-a79f-ad6652743ace)
-
+![image](https://github.com/user-attachments/assets/2463b546-5d0c-4da0-bbec-39f37630de1e)
 
 ## Result:
 Thus the program was executed and the output was verified successfully.
