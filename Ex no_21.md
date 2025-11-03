@@ -5,9 +5,13 @@ To write a C program to calculate the area of a triangle using pointer.
 
 ## Algorithm
 1. Start the program and declare three float variables for the base, height, and area of the triangle.
+
 2.Declare a pointer for the area variable.
+
 3.Read the base and height of the triangle from the user.
+
 4.Use the pointer to calculate the area (Area = 0.5 * base * height).
+
 5.Display the calculated area.  
 
 ## Program:
