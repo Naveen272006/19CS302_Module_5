@@ -1,39 +1,39 @@
-# EX 21 C program to calculate the area of a triangle using pointer.
-
+# EX 22 C program to count total number of even elements in an array using calloc().
+## DATE: 
 ## AIM:
-To write a C program to calculate the area of a triangle using pointer.
+To write a C program to count total number of even elements in an array using calloc().
 
-## Algorithm
-1. Start the program and declare three float variables for the base, height, and area of the triangle.
-
-2.Declare a pointer for the area variable.
-
-3.Read the base and height of the triangle from the user.
-
-4.Use the pointer to calculate the area (Area = 0.5 * base * height).
-
-5.Display the calculated area.  
+## Algorithm:
+1. Start.
+2. Define a variables.
+3. Write program to count total number of even elements in an array using calloc().
+4. Read the value using scanf.
+5. Ask the user to make an input.
+6. Print out the answer.
+7. End.
 
 ## Program:
-```
-#include <stdio.h>
+```c program
+#include<stdio.h> 
+#include<stdlib.h> 
 int main()
 {
-    float base, height, area;
-    float *ptr = &area;  
-    printf("Enter the base of the triangle: ");
-    scanf("%f", &base);
-    printf("Enter the height of the triangle: ");
-    scanf("%f", &height);
-    *ptr = 0.5 * base * height;
-    printf("Area of the triangle: %.2f\n", *ptr);
-    return 0;
+int *arr,n,i,count=0; 
+scanf("%d",&n); 
+arr=(int*)calloc(1,sizeof(int)); 
+for(i=0;i<n;i++)
+{
+scanf("%d",&arr[i]);
+}
+for(i=0;i<n;i++)
+if(arr[i]%2==0) 
+count++;
+printf("Total even elements: %d",count);
 }
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/25caf876-f3f4-4f45-b7ef-c1a82fc1b17f)
-
+![image](https://github.com/user-attachments/assets/fc17064a-f203-40f7-be85-cfac3550bfbc)
 
 
 ## Result:
