@@ -1,64 +1,51 @@
 # EX 24 Create a structure program to read(empno,dept and basic pay) and store the data of 3 employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
-
+## DATE:
 ## AIM:
 To Create a structure program to read(empno,dept and basic pay) and store the data of 3 employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
 
-## Algorithm
-1.Start the program and define a structure with fields for employee number (empno), department (dept), and basic pay (basicPay).
+## Algorithm:
+1. Start.
+2. Define a variables.
+3. Create a structure program to read(empno,dept and basic pay) and store the data of 3 
+employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
+4. Read the value using scanf.
+5. Ask the user to make an input.
+6. Print out the answer.
+7. End 
 
-2.Declare an array of structures to store the data of 3 employees.
-
-3.Read the details (employee number, department, and basic pay) for each employee from the user.
-
-4.Calculate the gross salary as: Gross Salary = Basic Pay + DA + HRA, where DA = 10% and HRA = 30% of the basic pay.
-
-5.Display the details of each employee along with the calculated gross salary.
 ## Program:
-```
-#include <stdio.h>
-struct Employee
-{
-    int empno;
-    char dept[50];
-    float basicPay;
-    float grossSalary;
+```c program
+#include <stdio.h> 
+struct Employee {
+int empno; 
+char dept[100];
+float basic_pay; 
+float gross_salary; 
+float da;
+float hra;
 };
-
-int main()
-{
-    struct Employee emp[3];  // Array of structure to store data of 3 employees
-    int i;
-
-    for(i = 0; i < 3; i++)
-    {
-        printf("Enter details for employee %d:\n", i + 1);
-
-        printf("Employee Number: ");
-        scanf("%d", &emp[i].empno);
-        printf("Department: ");
-        scanf("%s", emp[i].dept);
-        printf("Basic Pay: ");
-        scanf("%f", &emp[i].basicPay);
-        float da = 0.10 * emp[i].basicPay;
-        float hra = 0.30 * emp[i].basicPay;
-        emp[i].grossSalary = emp[i].basicPay + da + hra;
-        printf("\n");
-    }
-    printf("Employee Details and Gross Salary:\n");
-    for(i = 0; i < 3; i++)
-    {
-        printf("Employee %d: EmpNo = %d, Department = %s, Basic Pay = %.2f, Gross Salary = %.2f\n", 
-               i + 1, emp[i].empno, emp[i].dept, emp[i].basicPay, emp[i].grossSalary);
-    }
-
-    return 0;
+int main() {
+struct Employee employees[3]; 
+for (int i = 0; i < 3; ++i) {
+scanf("%d", &employees[i].empno); 
+scanf("%s", employees[i].dept); 
+scanf("%f", &employees[i].basic_pay);
+employees[i].da = 0.1 * employees[i].basic_pay; // DA is 10% of Basic Pay 
+employees[i].hra = 0.3 * employees[i].basic_pay; // HRA is 30% of Basic Pay 
+employees[i].gross_salary = employees[i].basic_pay + employees[i].da +
+employees[i].hra;
 }
-
+printf("Details of the Employee:\n");
+for (int i = 0; i < 3; ++i) {
+printf("%d %s %.f %.f %.f %.2f\n", employees[i].empno, employees[i].dept, 
+employees[i].basic_pay, employees[i].da, employees[i].hra, employees[i].gross_salary);
+}
+return 0;
+}
 ```
 
 ## Output:
-
-![image](https://github.com/user-attachments/assets/442f3e4a-1d75-482c-8945-7feae6481320)
+![image](https://github.com/user-attachments/assets/754a6ee5-b734-4442-a5fa-66505e7814ad)
 
 
 ## Result:
